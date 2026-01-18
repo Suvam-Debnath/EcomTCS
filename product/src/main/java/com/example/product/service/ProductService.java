@@ -49,4 +49,10 @@ public class ProductService {
     public List<Product> searchProducts(String keyword) {
         return productRepository.searchProducts(keyword);
     }
+
+    public Optional<Product> getProductById(String id) {
+        return productRepository.findByIdAndActiveTrue(Long.valueOf(id));
+    }
+
+
 }
