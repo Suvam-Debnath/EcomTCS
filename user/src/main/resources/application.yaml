@@ -1,29 +1,25 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: user
 
-  h2:
-    console:
-      enabled: true
-
   datasource:
-    url: jdbc:h2:mem:test
-    driver-class-name: org.h2.Driver
-    username: sa
-    password: ""
+    url: jdbc:postgresql://localhost:5432/userTCS
+    username: postgres
+    password: suvam123
 
   jpa:
+    database: POSTGRESQL
     show-sql: true
     hibernate:
-      ddl-auto: create
-    database-platform: org.hibernate.dialect.H2Dialect
-
-server:
-  port: 8081
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 eureka:
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8761/eureka/
     register-with-eureka: true
     fetch-registry: true
