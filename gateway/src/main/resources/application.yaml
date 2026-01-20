@@ -5,35 +5,35 @@ spring:
   application:
     name: gateway
 
-  cloud:
-    gateway:
-      routes:
-        - id: user
-          uri: lb://USER
-          predicates:
-            - Path=/api/users/**
-
-        - id: product
-          uri: lb://PRODUCT
-          predicates:
-            - Path=/api/products/**
-
-        - id: order
-          uri: lb://ORDER
-          predicates:
-            - Path=/api/orders/**, /api/cart/**
-
-        - id: eureka
-          uri: http://localhost:8761
-          predicates:
-            - Path=/eureka/main
-          filters:
-            - SetPath=/
-
-        - id: eureka-static
-          uri: http://localhost:8761
-          predicates:
-            - Path=/eureka/**
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: user
+#          uri: lb://USER
+#          predicates:
+#            - Path=/api/users/**
+#
+#        - id: product
+#          uri: lb://PRODUCT
+#          predicates:
+#            - Path=/api/products/**
+#
+#        - id: order
+#          uri: lb://ORDER
+#          predicates:
+#            - Path=/api/orders/**, /api/cart/**
+#
+#        - id: eureka
+#          uri: http://localhost:8761
+#          predicates:
+#            - Path=/eureka/main
+#          filters:
+#            - SetPath=/
+#
+#        - id: eureka-static
+#          uri: http://localhost:8761
+#          predicates:
+#            - Path=/eureka/**
 
 management:
   endpoints:
