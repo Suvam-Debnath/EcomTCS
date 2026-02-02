@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: SpringbootProfileDemo
+  profiles:
+    active: dev
+build:
+  id: 122
+  version: 1.2.2
+  name: "Default-Build"
+  type: "Default Build"
+
+server:
+  port: 9091
